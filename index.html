@@ -1,0 +1,455 @@
+<html>
+  <head>
+    <title>my title</title>
+    <script type="text/javascript" src="js/jquery-3.6.0.js" >
+    </script>
+	<style type="text/css">
+	.myStyle
+	{
+	color:red;
+	}	
+	
+		.myStyle2
+	{
+	font-size:50px;
+	background:blue;
+	}	
+	
+			.myStyle3
+	{
+	font-size:50px;
+	background:blue;
+	}	
+	
+	div{
+	/*height : 158px;
+	width : 200px;
+	background-color : lightgray*/
+	}
+	</style>
+    <script type="text/javascript">
+      //alert("1");
+	  	  
+	  /*$(document).ready(function(){
+	  alert("hello 222");
+	  });
+	  
+	  $(function(){
+	  alert("hello 333");
+	  });*/
+	  
+	  function init()
+	  {
+	  var title = document.getElementById("myTitle");
+	  //alert(title.innerHTML);
+	  //alert(title.html());
+	  //alert($(title).html()+"123...");
+	  }
+	    
+	  function over(){
+	  //alert("over...");
+	  }
+	  
+	  function myBind(){
+	  $("#uname").bind("click",function(){
+	  //alert("click...");
+	  });
+	  }
+	  
+	  function myUnBind(){
+	  $("#uname").unbind("click");
+	  }
+	  
+	  function test(){
+	  $("input:focus").css("background-color","yellow");
+	  }
+	  
+	  
+	  function myShow(){
+	  $("h3").slideDown("3000");
+	  }
+	  
+	  	  function myHide(){
+		  $("h3").slideUp("3000");
+	  }
+	  
+	  jQuery(document).ready(function() {//加载函数
+	  //$("#divId2").height(500);
+	  //$("#divId2").width(500);
+	  //alert($("#divId2").height());
+	  //alert($("#divId2").width());
+	  
+	  /*var $myDivOffset = $("#divId2").offset(function(index,oldOffset){
+	  var newOffset = new Object();
+	  
+	  newOffset.left = oldOffset.left+100;
+	  newOffset.top = oldOffset.top+100;
+	  return newOffset;
+	  	  });*/
+	  
+	  $("#utel").blur(function(){
+	  var $utel = $(this).val();
+	  
+	  var reg = /^1\d{10}$/;
+	  
+	  if(!reg.test($utel)){
+	  if($utel == ""|| $utel.length==0){
+	   $("#telTip").css("display","none");
+	  }else{
+	  
+	  $("#telTip").css("display","inline");
+	  }
+	  
+	  }else{
+	  $("#telTip").css("display","none");
+	  }
+	  });
+	  
+	  $("#uemail").blur(function(){
+	   var $uemail = $(this).val();
+	  
+	  var reg = /^\w+@[0-9a-zA-Z]{2,4}\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$/;
+	  
+	  if(!reg.test($uemail)){
+	  	  if($uemail == ""|| $uemail.length==0){
+	   $("#emailTip").css("display","none");
+	  }else{
+	  $("#emailTip").css("display","inline");
+	  }
+	  }else{
+	  $("#emailTip").css("display","none");
+	  }
+	  });
+	  
+	  
+
+	  
+	  //var $myDivOffset = $("#divId2").offset();
+	  //alert($myDivOffset.left+","+$myDivOffset.top);
+	  
+	  //alert("hello jQuery***");
+	  //var $title = $("#myTitle");
+	  //alert($title.html()+"jQuery...")
+	  //alert($title[0].innerHTML+"1111");
+	  //alert($title.get(0).innerHTML+"22222");
+	  //alert($("p").html()+"3333");
+	  //alert($("p").length);
+	  //alert($(".myStyle").html());
+	  //alert($("#myTitle,.myStyle,#myTitle3").length);
+	  //alert($("p.myStyle").html());
+	  //alert($("*").length);
+	  //alert($("#b+li").html());
+	  //alert($("#b~li").length);
+	  //alert($("ul>li").length);
+	  //alert($("[class='myStyle1']").html());
+	  //alert($("[class^='x']").length);
+	  //alert($("[class$='x']").length
+	  //alert($("[class*='y']").length);
+	  //alert($("ul>li").first().html());
+	  //alert($("ul>li:first").html());
+	  //alert($("ul>li").eq(2).html());
+	  //alert($("ul>li:eq(2)").html());
+	  //alert($("ul>li:odd").length);
+	  //alert($($("ul>li:odd")[1]).html());
+	  //alert($("ul>li:gt(1)").length);
+	  //alert($("ul>li:lt(1)").length);
+	  //alert($("li:not(ul>li:lt(1))").length);
+	  //$(":header").css("background-color","orange");//css()设置css样式
+	  //$("input:focus").css("background-color","yellow");
+	  
+	  //alert($(":visible").length);
+	  //alert($(":hidden").length);
+	  
+	  
+	  
+	  $("h1").click(function(){
+	  //alert("单击事件");  
+	  });
+	  
+	  
+	  
+	  
+	  $("#bid").click(function(){
+	  $(this).offsetParent().css("border","10px blue solid");
+	  });
+	  
+	  /*$("div").mouseover(function(){
+	  alert("悬浮......");
+	  })
+	  
+	  $("div").mouseout(function(){
+	  alert("移开......");
+	  })*/
+	  
+	  /*$("div").mouseover(function(){
+	  alert("悬浮......");
+	  }).mouseout(function(){
+	  alert("移开......");
+	  });*/
+	  
+	  /*("body").keypress(function(event){
+	  if (event.keyCode == 13){
+	  alert("回车。。。")}}).keyup(function(){
+	  alert("松开。。。")});*/
+	  
+	  /*$("div").bind({"mouseover":function(){
+	  alert("按下...bind...");},"mouseout":function(){
+	  alert("松开...bind...");}});*/
+	  
+	  /*$("#uid").focus(function(){
+	  //当前元素就是$("#uid"),即id="uid"的文本框
+	  //当前元素可以用this表示。
+	  $(this).css("background-color","#dbc");
+	  }).blur(function(){
+	  $(this).css("background-color","white")})
+	  ;*/
+	  //$("#uid").bind("click",function(){alert("bind形式的单击事件。。。")});
+	  
+	  //$("h2").hover(function(){alert("悬浮。。。")},function(){alert("离开。。。")});
+	  
+	  /*3版本不支持，1.9以下版本才支持。--$("body").toggle(function(){
+	  $(this).css("background-color","red")},function(){
+	  $(this).css("background-color","green")},function(){
+	  $(this).css("background-color","orange")});*/
+	  
+	  //$("#color2Id").css({"color":"red","font-size":"100px"});
+	  /*$("#mytestId").addClass("myStyle2 myStyle");
+	  
+	  $("#mytestId").click(function(){
+	  $("#mytestId").toggleClass();
+	  });*/
+	  
+	  //alert($("#mytestId").html()); 
+	  
+	  /*$("#uage").blur(function(){
+	  var $age = $("#uage").val();
+	  if(!($age >0 && $age <100)){
+	  alert("年龄输入有误！");
+	  }
+	  });*/
+	  //当单击submit按钮时触发,通过返回值true|false告知程序，是否校验成功
+	  /*$("#myForm").submit(function(){
+	  var $uname = $("#uname").val();
+	  var $upwd = $("#upwd").val();
+	  var $uheight = $("#uheight").val();
+	  
+	  if ($uname.length<2 || $uname >6){
+	  alert("名字必须2-6位！");
+	  return false;//校验失败
+	  }
+	  
+	  if ($upwd.length<=6){
+	  alert("密码必须6位以上！");
+	  return false;//校验失败
+	  }
+	  
+	  if ($uheight　<100||$uheight　>200){
+	  alert("身高应该在100-200之间！");
+	  return false;//校验失败
+	  }
+	  
+	  
+	  
+	  return true;//校验成功，表单提交。
+	  });*/
+	  
+	  
+	  $(":input").each(function(index,element){
+	  if(index==0){
+	  alert("basketball"+$(element).val());
+	  }
+	  	  if(index==1){
+	  alert("football"+$(element).val());
+	  }
+	  	  if(index==2){
+	  alert("pingpang"+$(element).val());
+	  }
+	  });
+	  
+	  //alert($(":file").attr("name"));
+	  
+	  });
+	
+	function myTest(){
+	//$("#mytestId").text("<div style='background-color:red'><strong>hello world</strong></div>");
+     //alert($("#uid").val());
+	 //$("#uid").val("1234");
+	 //var $myElement = $("<li>xxx</li>");
+	 //$("ul").append($myElement);//内部插入
+	 //$myElement.appendTo($("ul"));
+	 //$("ul").prepend($myElement);
+	 //$myElement.prependTo($("ul"));
+	 //var $myElement = $("<p>hello node...</p>");
+	 
+	 //$("ul").after($myElement);
+	 //$myElement.insertAfter($("ul"));
+	 //$("ul").before($myElement);
+	 //$myElement.insertBefore($("ul"));
+	 //$("ul>li:eq(1)").replaceWith("<li>xxx</li>");
+	 //$("<li>xxx</li>").replaceAll("ul>li:eq(1)");
+	 
+	 //$("ul>li:eq(1)").remove();
+	 
+	 //$("ul").append($("ul>li:eq(1)").clone());
+	 
+	 //alert($("#uid").val());
+	 //alert($("#uid").attr("type"));
+	 //$("#uid").attr("name","zs");
+	 //alert($("#uid").attr("name"));
+	 
+	 
+	//$("#uid").removeAttr("value");
+	// alert($("#uid").attr("value"));
+	 //var $list = $("ul").children("li");
+	 //var $list = $("body").find("li");
+	 //alert($list.length)
+	 
+	 //alert($("ul>li:eq(1)").next().html());
+	 //alert($("ul>li:eq(1)").prev().html());
+	 //alert($("ul>li:eq(1)").siblings().length);
+	 //alert($("ul>li:eq(1)").parents("ul").html());
+	 
+	// alert($("ul>li:eq(1)").siblings(":odd").css("background-color","green"));
+	 
+	 $("ul>li").each(function(index,element){
+	 //alert(index +","+ $(element).html());
+	 });
+	}
+	
+	
+	function check(){
+	  var $uname = $("#uname").val();
+	  var $upwd = $("#upwd").val();
+	  var $uheight = $("#uheight").val();
+	  
+	  if ($uname.length<2 || $uname >6){
+	  alert("名字必须2-6位！");
+	  return false;//校验失败
+	  }
+	  
+	  if ($upwd.length<=6){
+	  alert("密码必须6位以上！");
+	  return false;//校验失败
+	  }
+	  
+	  if ($uheight　<100||$uheight　>200){
+	  alert("身高应该在100-200之间！");
+	  return false;//校验失败
+	  }
+	  
+	  
+	  
+	  return true;//校验成功，表单提交。
+	}
+	
+	function testmethod(node){
+	alert($(node).val());
+	alert($(node).prev().val());
+	alert($(node).next().val());
+	}
+	
+    </script>	
+  </head>
+
+  <!--<body onload="init()">-->
+    <body>
+	
+<!--	<input type="file" name="myFile"/>-->
+	
+	<input type="checkbox" value="basketball" name ="hobby"/>
+	<input type="checkbox" value="football" name ="hobby" onclick="testmethod(this)"/>
+	<input type="checkbox" value="pingpang" name ="hobby"/>
+		
+    <input type="text" name="myName" id="uname1"/>
+	<input type="button" name="myButton" value="绑定1" onclick="myBind1()"/>
+	
+	<textarea name="myTextarea">hello textarea</textarea>
+	
+	<br/><br/><br/><br/><br/><br/><br/><br/>
+	
+	
+	
+	<form id="myForm" action="result.html">
+	uname:<input id ="uname"/><br/>
+	pwd:<input type = "password" id="upwd"/><br/>
+	height:<input id ="uheight"/><br/>
+	tel：<input id ="utel"/><font color="red" id="telTip" style="display:none">电话号码格式不正确。</font><br/>
+	email：<input id ="uemail"/><font color="red" id="emailTip" style="display:none">邮箱格式不正确。</font><br/>
+	<input type="submit" value="注册"/>
+	</form>
+	
+	<br/><br/><br/><br/><br/><br/><br/><br/>
+	
+	
+	
+	<input id="uage"/>
+	
+	<div style="position:relative;height:300px;width:300px;border:10px solid red">
+	abc
+	<input id= "bid" type="button" value="子节点"/>
+	</div>
+	
+	
+	<div id="divId2" onmouseover="over()">
+	some text.....
+	</div>	
+	
+	<input type="text" value="9527" id="uid" name="..."/> 
+	<button onclick="myTest()">test</button><br/><br/>
+	
+	
+	
+  <ul>
+  <li>aaa</li>
+  <li>bbb</li>
+  <li>ccc</li>
+  <li>ddd</li>
+  <li>eee</li>
+  <li>fff</li>
+  </ul>
+  
+	
+	
+	
+	
+	
+	
+	<p id="mytestId">
+	<font color="purse">some test........</font>
+	</p>
+	
+	
+	  <p id="color2Id">color222</p>
+	
+		<h3>h3h3h3</h3> 
+		<button onclick="myShow()">显示</button>
+		<button onclick="myHide()">隐藏</button>
+		
+		<br/><br/><br/><br/><br/><br/>
+	
+	
+	
+
+	<input type="text" id="uid"/> <br/><br/><br/>
+	
+	uname:<input type="text" id="uname"/>
+	<input type="button" value="绑定" onclick="myBind()"/>
+	<input type="button" value="解绑" onclick="myUnBind()"/>
+	<br/><br/><br/>
+	
+
+	id<input type="text" onclick="test()"/> <br/>
+
+	<h1>h1h1h1</h1>
+	<h2 style="border:1px solid red">h2h2h2</h2>
+	
+  <p id="myTitle">color</p>
+
+  <p class="xxx">color233332</p>
+  <p class="yyx">color5555</p>
+  <p id="myTitle3">color333</p>
+  
+
+  
+  </body>
+</html>
